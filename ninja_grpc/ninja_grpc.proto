@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+// option java_multiple_files = true;
+// option java_package = "io.grpc.examples.ninja_grpc";
+// option java_outer_classname = "MyninjaProto";
+// option objc_class_prefix = "HLW";
+
+
+option go_package = "gitee.com/wangning057/gRPC_executor/ninja_grpc";
+
+package ninja_grpc;
+
+service Executor {
+    rpc Execute (Command) returns (ExecuteResult) {}
+}
+
+message Command {
+    string str_command = 1;
+    bool use_console = 2;
+}
+
+message ExecuteResult {
+    string hasFinished = 1;
+}
