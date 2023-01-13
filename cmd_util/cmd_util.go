@@ -12,8 +12,8 @@ import (
 	"syscall"
 	"time"
 
-	"gitee.com/wangning057/ninja_server/status"
 	ps "github.com/mitchellh/go-ps"
+	"github.com/wangning057/remote_executor/status"
 )
 
 const (
@@ -238,7 +238,7 @@ func RunWithProcessTreeCleanup(ctx context.Context, cmd *exec.Cmd) error {
 	// 		}
 	// 	}
 	// }()
-	
+
 	err := cmd.Wait()
 	if err != nil {
 		fmt.Println("cmd.Wait()出错：", err)

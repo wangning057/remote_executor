@@ -8,8 +8,8 @@ import (
 	"log"
 	"net"
 
-	"gitee.com/wangning057/ninja_server/cmd_util"
-	pb "gitee.com/wangning057/ninja_server/ninja_grpc"
+	"github.com/wangning057/remote_executor/cmd_util"
+	pb "github.com/wangning057/remote_executor/ninja_grpc"
 	"google.golang.org/grpc"
 )
 
@@ -54,7 +54,7 @@ func (s *server) Execute(ctx context.Context, in *pb.Command) (*pb.ExecuteResult
 
 	cmd_util.Run(ctx, cmd, workDir, stdio)
 	res.HasFinished = "ok"
-	ctx.Done();
+	ctx.Done()
 	count += 1
 	fmt.Println("已完成任务数： ", count)
 
@@ -79,7 +79,6 @@ func (s *server) Execute(ctx context.Context, in *pb.Command) (*pb.ExecuteResult
 	// res.HasFinished = "ok"
 
 	// ctx.Done()
-
 
 	return res, nil
 }

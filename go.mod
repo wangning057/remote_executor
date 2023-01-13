@@ -1,4 +1,4 @@
-module gitee.com/wangning057/ninja_server
+module github.com/wangning057/remote_executor
 
 go 1.19
 
